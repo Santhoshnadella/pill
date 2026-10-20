@@ -1,6 +1,7 @@
 {
   "name": "@pill/design-tokens",
   "version": "0.1.0",
+  "type": "module",
   "description": "Visual design tokens for the PILL product ecosystem",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

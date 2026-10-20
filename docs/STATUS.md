@@ -20,9 +20,10 @@
 | **Domain Logic** | Secret pattern detection & untrusted labeling | **IMPLEMENTED** | `packages/domain/src/security-ops.ts`, credential warning test | None |
 | **Local Store** | Local Vault & Identity Isolation Engine | **IMPLEMENTED** | `packages/local-store/src/store.ts` (5 passed: Alice/Bob isolation, search, lock, wipe) | None |
 | **Local Store** | SQLite + FTS5 DDL & Triggers | **IMPLEMENTED** | `packages/local-store/src/sqlite-schema.sql` ready for SQLite | Native SQLite driver for Tauri/Expo |
-| **UI** | Topic Panel (Capture Overlay) | **PLANNED** | Ready for Milestone 2 implementation | None |
-| **Compiler** | Context Compiler Pipeline | **PLANNED** | Ready for Milestone 2 implementation | None |
-| **Security** | Identity Isolation & Multi-account switcher | **PARTIAL** | Memory boundaries verified; OS auth pending | Milestone 3 |
+| **UI** | Topic Panel (Capture Overlay) | **IMPLEMENTED** | Verified in browser test (`Ctrl+Shift+C`, modal capture, credential scan) | None |
+| **Compiler** | Context Compiler Pipeline | **IMPLEMENTED** | `packages/context-compiler` (5 passed), Studio UI verified | None |
+| **Desktop App**| Local-First Web/Desktop Client | **IMPLEMENTED** | `apps/desktop` (Vite + React 19), live on `localhost:3000` | None |
+| **Security** | Identity Isolation & Multi-account switcher | **IMPLEMENTED** | Verified in browser (Alice ⇄ Bob vault locking and cache purge) | None |
 | **Sync** | Sync Engine & Offline Queue | **PLANNED** | Protocol defined | Dependent on Cloudflare Worker & D1 |
 | **Cloud/R2** | Encrypted Blob Tickets | **PLANNED** | Ticket flow designed | Cloudflare R2 credentials needed |
 | **Billing** | SaaS Entitlements (Free vs Plus) | **PLANNED** | Server-verified rule defined | Deferred to Milestone 6 |
@@ -41,4 +42,6 @@
 | 2026-10-20 | Entity Schemas Test | `pnpm --filter @pill/schemas test` | **PASS** | 4/4 tests passed (Pill, Collection, Bundle validation, ownerId isolation) |
 | 2026-10-20 | Domain Logic Test | `pnpm --filter @pill/domain test` | **PASS** | 5/5 tests passed (build, revision bumping, archive, typed links, credential detection) |
 | 2026-10-20 | Local Vault Store Test | `pnpm --filter @pill/local-store test` | **PASS** | 5/5 tests passed (Alice/Bob identity isolation, lexical search, vault locking, memory wiping) |
-| 2026-10-20 | Full Workspace Build | `pnpm build` | **PASS** | TypeScript compilation succeeded across all 4 packages |
+| 2026-10-20 | Context Compiler Test | `pnpm --filter @pill/context-compiler test` | **PASS** | 5/5 tests passed (provenance, budget truncation, cross-account security rejection) |
+| 2026-10-20 | Desktop App Build | `pnpm --filter @pill/desktop build` | **PASS** | Vite production bundle generated in 5.99s with zero errors |
+| 2026-10-20 | Browser Subagent E2E | Browser verification on `localhost:3000` | **PASS** | Verified Topic Modal, Context Studio, Alice ⇄ Bob identity isolation |

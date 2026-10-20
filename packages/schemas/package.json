@@ -1,6 +1,7 @@
 {
   "name": "@pill/schemas",
   "version": "0.1.0",
+  "type": "module",
   "description": "Zod runtime schemas and TypeScript types for PILL entities",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

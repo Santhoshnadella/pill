@@ -1,6 +1,7 @@
 {
   "name": "@pill/local-store",
   "version": "0.1.0",
+  "type": "module",
   "description": "Local-first vault store and identity isolation manager for PILL",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
