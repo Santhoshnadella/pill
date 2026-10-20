@@ -23,14 +23,15 @@
 | **UI** | Topic Panel (Capture Overlay) | **IMPLEMENTED** | Verified in browser test (`Ctrl+Shift+C`, modal capture, credential scan) | None |
 | **Compiler** | Context Compiler Pipeline | **IMPLEMENTED** | `packages/context-compiler` (5 passed), Studio UI verified | None |
 | **Desktop App**| Local-First Web/Desktop Client | **IMPLEMENTED** | `apps/desktop` (Vite + React 19), live on `localhost:3000` | None |
+| **Native Shell** | Tauri v2 Packaging & OS Capabilities | **PARTIAL** | `src-tauri` configured, capabilities bounded; host requires C++ `link.exe` for native `.exe` build | Install MSVC C++ Build Tools |
 | **Security** | Identity Isolation & Multi-account switcher | **IMPLEMENTED** | Verified in browser (Alice ⇄ Bob vault locking and cache purge) | None |
 | **Sync** | Sync Engine & Offline Queue | **IMPLEMENTED** | `packages/sync-engine` (4 passed: offline queue, idempotency, backoff, conflicts) | None |
 | **Cloud/API** | Cloudflare Workers API & D1 Sync Relay | **IMPLEMENTED** | `services/api` (6 passed: enroll, revoke, cursor pull, push idempotency) | None |
 | **Cloud/R2** | Encrypted Blob Tickets & 5MB Free-Tier Ceiling | **IMPLEMENTED** | `services/api` (upload/download tickets, 413 ceiling enforcement) | None |
-| **Billing** | SaaS Entitlements (Free vs Plus) | **PLANNED** | Server-verified rule defined | Deferred to Milestone 6 |
-| **Extension** | Chromium Manifest V3 Extension | **PLANNED** | Architecture approved | Deferred to Milestone 5 |
-| **Mobile** | Expo React Native Client | **PLANNED** | Architecture approved | Deferred to Milestone 5 |
-| **Interoperability**| Read-only MCP Server | **PLANNED** | Protocol design approved | Deferred to Milestone 6 |
+| **Extension** | Chromium Manifest V3 Extension | **IMPLEMENTED** | `apps/extension` (3 passed: minimal `activeTab` permissions, popup built) | None |
+| **Interoperability**| Read-only MCP Server | **IMPLEMENTED** | `packages/mcp-server` (4 passed: read-only tools, cross-account security) | None |
+| **Billing** | SaaS Entitlements (Free vs Plus) | **PLANNED** | Server-verified rule defined | Deferred to Milestone 7 |
+| **Mobile** | Expo React Native Client | **PLANNED** | Architecture approved | Deferred to Milestone 7 |
 
 ---
 
@@ -48,3 +49,5 @@
 | 2026-10-20 | Browser Subagent E2E | Browser verification on `localhost:3000` | **PASS** | Verified Topic Modal, Context Studio, Alice ⇄ Bob identity isolation |
 | 2026-10-20 | Sync Engine Test | `pnpm --filter @pill/sync-engine test` | **PASS** | 4/4 tests passed (offline queue, idempotency, backoff, conflict preservation) |
 | 2026-10-20 | Cloudflare Workers API Test | `pnpm --filter @pill/api test` | **PASS** | 6/6 tests passed (device enrollment, revocation, push/pull, 5MB quota ceiling) |
+| 2026-10-20 | Browser Extension Test | `pnpm --filter @pill/extension test` | **PASS** | 3/3 tests passed (least-privilege `activeTab`, Manifest V3, background service worker) |
+| 2026-10-20 | MCP Server Test | `pnpm --filter @pill/mcp-server test` | **PASS** | 4/4 tests passed (read-only tools, scoped search, identity isolation protection) |

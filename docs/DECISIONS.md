@@ -31,3 +31,11 @@
 - **Context:** Traditional cloud backends (AWS RDS, S3 with egress fees, ECS) introduce recurring costs that threaten a zero-budget strategy.
 - **Decision:** Standardize remote sync on Cloudflare Workers (API), Cloudflare D1 (Serverless SQLite metadata), and Cloudflare R2 (Object storage with zero egress fees).
 - **Consequences:** Stays 100% within perpetual free tiers for early users while providing global low-latency edge performance.
+
+---
+
+## ADR-005: Tauri v2 Native Desktop Shell with Strict Capability Bounds
+- **Status:** Accepted (2026-10-20)
+- **Context:** Electron introduces excessive binary sizes (~150MB) and high memory consumption (~300MB+ RAM). Furthermore, permissive desktop bridges risk arbitrary shell execution from untrusted content.
+- **Decision:** Standardize native desktop packaging on Tauri v2 (Rust + native webview). Enforce least-privilege capability boundaries (`capabilities/default.json`), exclude the arbitrary shell plugin completely, and apply a strict Content Security Policy (CSP).
+- **Consequences:** Tiny binary size (~15MB), lightweight memory footprint (~30MB RAM), secure IPC commands with zero arbitrary shell access.

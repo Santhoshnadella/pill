@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "pill — Explicit Context Capture",
+  "version": "0.1.0",
+  "description": "Capture tabs, snippets, and YouTube moments with provenance into your local Pill vault.",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Capture Pill"
+  },
+  "background": {
+    "service_worker": "src/background.ts",
+    "type": "module"
+  }
+}

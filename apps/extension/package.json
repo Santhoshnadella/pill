@@ -1,0 +1,27 @@
+{
+  "name": "@pill/extension",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "PILL Chromium Browser Extension (Manifest V3) for explicit context capture",
+  "scripts": {
+    "build": "tsc && vite build",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@pill/domain": "workspace:*",
+    "@pill/schemas": "workspace:*",
+    "lucide-react": "^1.16.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.308",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.7.3",
+    "vite": "^6.2.0",
+    "vitest": "^3.0.7"
+  }
+}
