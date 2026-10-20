@@ -75,7 +75,6 @@ Detailed specifications:
 - **[Product Workflows Specification](docs/PRODUCT_WORKFLOWS.md)**
 - **[Zero Budget Technology Stack](docs/ZERO_BUDGET_TECH_STACK.md)**
 - **[Product Whitepaper](PILL_WHITEPAPER.md)**
-- **[Master Build Prompt](PILL_MASTER_BUILD_PROMPT.md)**
 
 ---
 
