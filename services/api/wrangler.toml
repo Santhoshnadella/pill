@@ -1,0 +1,20 @@
+name = "pill-api"
+main = "src/index.ts"
+compatibility_date = "2026-10-01"
+
+# Environment Variables
+[vars]
+APP_ENV = "development"
+API_VERSION = "0.1.0"
+MAX_BLOB_BYTES = 5242880 # 5MB limit for zero-budget quota control
+
+# Cloudflare D1 Serverless Database (Perpetual Free Tier: 5M reads/day, 100k writes/day)
+[[d1_databases]]
+binding = "DB"
+database_name = "pill-db-dev"
+database_id = "local-d1-placeholder"
+
+# Cloudflare R2 Object Storage (Perpetual Free Tier: 10GB storage, $0 egress fees)
+[[r2_buckets]]
+binding = "ATTACHMENTS"
+bucket_name = "pill-attachments-dev"

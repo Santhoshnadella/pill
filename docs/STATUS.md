@@ -24,8 +24,9 @@
 | **Compiler** | Context Compiler Pipeline | **IMPLEMENTED** | `packages/context-compiler` (5 passed), Studio UI verified | None |
 | **Desktop App**| Local-First Web/Desktop Client | **IMPLEMENTED** | `apps/desktop` (Vite + React 19), live on `localhost:3000` | None |
 | **Security** | Identity Isolation & Multi-account switcher | **IMPLEMENTED** | Verified in browser (Alice ⇄ Bob vault locking and cache purge) | None |
-| **Sync** | Sync Engine & Offline Queue | **PLANNED** | Protocol defined | Dependent on Cloudflare Worker & D1 |
-| **Cloud/R2** | Encrypted Blob Tickets | **PLANNED** | Ticket flow designed | Cloudflare R2 credentials needed |
+| **Sync** | Sync Engine & Offline Queue | **IMPLEMENTED** | `packages/sync-engine` (4 passed: offline queue, idempotency, backoff, conflicts) | None |
+| **Cloud/API** | Cloudflare Workers API & D1 Sync Relay | **IMPLEMENTED** | `services/api` (6 passed: enroll, revoke, cursor pull, push idempotency) | None |
+| **Cloud/R2** | Encrypted Blob Tickets & 5MB Free-Tier Ceiling | **IMPLEMENTED** | `services/api` (upload/download tickets, 413 ceiling enforcement) | None |
 | **Billing** | SaaS Entitlements (Free vs Plus) | **PLANNED** | Server-verified rule defined | Deferred to Milestone 6 |
 | **Extension** | Chromium Manifest V3 Extension | **PLANNED** | Architecture approved | Deferred to Milestone 5 |
 | **Mobile** | Expo React Native Client | **PLANNED** | Architecture approved | Deferred to Milestone 5 |
@@ -45,3 +46,5 @@
 | 2026-10-20 | Context Compiler Test | `pnpm --filter @pill/context-compiler test` | **PASS** | 5/5 tests passed (provenance, budget truncation, cross-account security rejection) |
 | 2026-10-20 | Desktop App Build | `pnpm --filter @pill/desktop build` | **PASS** | Vite production bundle generated in 5.99s with zero errors |
 | 2026-10-20 | Browser Subagent E2E | Browser verification on `localhost:3000` | **PASS** | Verified Topic Modal, Context Studio, Alice ⇄ Bob identity isolation |
+| 2026-10-20 | Sync Engine Test | `pnpm --filter @pill/sync-engine test` | **PASS** | 4/4 tests passed (offline queue, idempotency, backoff, conflict preservation) |
+| 2026-10-20 | Cloudflare Workers API Test | `pnpm --filter @pill/api test` | **PASS** | 6/6 tests passed (device enrollment, revocation, push/pull, 5MB quota ceiling) |
