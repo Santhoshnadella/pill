@@ -1,0 +1,21 @@
+{
+  "name": "@pill/local-store",
+  "version": "0.1.0",
+  "description": "Local-first vault store and identity isolation manager for PILL",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@pill/domain": "workspace:*",
+    "@pill/schemas": "workspace:*",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.7"
+  }
+}
