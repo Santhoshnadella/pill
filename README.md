@@ -4,6 +4,10 @@
 > *Your context, across devices, apps and identities.*  
 > *A universal context layer for your digital life — More context. Less friction.*
 
+<p align="center">
+  <img src="assets/pill-header-banner.jpeg" alt="pill header banner" width="100%" />
+</p>
+
 ---
 
 ## 📸 Visual Overview
